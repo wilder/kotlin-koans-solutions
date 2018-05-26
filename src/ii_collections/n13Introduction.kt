@@ -13,12 +13,11 @@ import java.util.*
 fun example0(list: List<Int>) {
     list.toSet()
 
-    list.toCollection(HashSet<Int>())
+    list.toCollection(HashSet())
 }
 
 fun Shop.getSetOfCustomers(): Set<Customer> {
     // Return a set containing all the customers of this shop
-    todoCollectionTask()
-//    return this.customers
+    return this.customers.toSet()
 }
 

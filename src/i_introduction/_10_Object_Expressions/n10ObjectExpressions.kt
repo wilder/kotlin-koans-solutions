@@ -18,6 +18,17 @@ fun todoTask10(): Nothing = TODO(
 
 fun task10(): List<Int> {
     val arrayList = arrayListOf(1, 5, 2)
-    Collections.sort(arrayList, todoTask10())
+    Collections.sort(arrayList, object: Comparator<Int> {
+        override fun compare(o1: Int, o2: Int): Int = o2.compareTo(o1)
+    })
+    // Same as Collections.sort(arrayList, {o1, o2 -> o2.compareTo(o1))}
+    // or in Kotlin arrayList.reversed()
     return arrayList
+}
+
+
+class MyClass {
+    companion object Factory {
+        fun create(): MyClass = MyClass()
+    }
 }
